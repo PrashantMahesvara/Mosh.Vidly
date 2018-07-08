@@ -195,12 +195,43 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807081257317_AddedGenreClass.cs" />
+    <Compile Include="Migrations\201807081257317_AddedGenreClass.Designer.cs">
+      <DependentUpon>201807081257317_AddedGenreClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807081310507_AddedCustomerClass.cs" />
+    <Compile Include="Migrations\201807081310507_AddedCustomerClass.Designer.cs">
+      <DependentUpon>201807081310507_AddedCustomerClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807081311361_AddedMovieClass.cs" />
+    <Compile Include="Migrations\201807081311361_AddedMovieClass.Designer.cs">
+      <DependentUpon>201807081311361_AddedMovieClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Authentication\AddPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\ChangePasswordViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\ConfigureTwoFactorViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\ExternalLoginConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\ExternalLoginListViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\FactorViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\ForgotPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\ForgotViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\IndexViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\LoginViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\ManageLoginsViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\ResetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\SendCodeViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\SetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\VerifyPhoneNumberViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -264,6 +295,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Dtos\" />
+    <Folder Include="ViewModels\Vidly\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -277,6 +310,17 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201807081257317_AddedGenreClass.resx">
+      <DependentUpon>201807081257317_AddedGenreClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807081310507_AddedCustomerClass.resx">
+      <DependentUpon>201807081310507_AddedCustomerClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807081311361_AddedMovieClass.resx">
+      <DependentUpon>201807081311361_AddedMovieClass.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
