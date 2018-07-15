@@ -194,8 +194,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\MovieDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -213,9 +215,58 @@
     <Compile Include="Migrations\201807081311361_AddedMovieClass.Designer.cs">
       <DependentUpon>201807081311361_AddedMovieClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807150928348_SeedAdmin.cs" />
+    <Compile Include="Migrations\201807150928348_SeedAdmin.Designer.cs">
+      <DependentUpon>201807150928348_SeedAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807150932574_SeedUsers.cs" />
+    <Compile Include="Migrations\201807150932574_SeedUsers.Designer.cs">
+      <DependentUpon>201807150932574_SeedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807150940531_SeedUserRoles.cs" />
+    <Compile Include="Migrations\201807150940531_SeedUserRoles.Designer.cs">
+      <DependentUpon>201807150940531_SeedUserRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807151316047_AddedMembershipTypeToCustomerClass.cs" />
+    <Compile Include="Migrations\201807151316047_AddedMembershipTypeToCustomerClass.Designer.cs">
+      <DependentUpon>201807151316047_AddedMembershipTypeToCustomerClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807151317077_SeedMembershipTypes.cs" />
+    <Compile Include="Migrations\201807151317077_SeedMembershipTypes.Designer.cs">
+      <DependentUpon>201807151317077_SeedMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807151320146_AddedDataannotationToCustomerClass.cs" />
+    <Compile Include="Migrations\201807151320146_AddedDataannotationToCustomerClass.Designer.cs">
+      <DependentUpon>201807151320146_AddedDataannotationToCustomerClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807151327359_AddedNameToMembershipTypeClass.cs" />
+    <Compile Include="Migrations\201807151327359_AddedNameToMembershipTypeClass.Designer.cs">
+      <DependentUpon>201807151327359_AddedNameToMembershipTypeClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807151330189_ClearMembershipTypes.cs" />
+    <Compile Include="Migrations\201807151330189_ClearMembershipTypes.Designer.cs">
+      <DependentUpon>201807151330189_ClearMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807151549413_AddedGenreToMovieClass.cs" />
+    <Compile Include="Migrations\201807151549413_AddedGenreToMovieClass.Designer.cs">
+      <DependentUpon>201807151549413_AddedGenreToMovieClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807151551465_PopulateGenre.cs" />
+    <Compile Include="Migrations\201807151551465_PopulateGenre.Designer.cs">
+      <DependentUpon>201807151551465_PopulateGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807151558481_PopulateMovies.cs" />
+    <Compile Include="Migrations\201807151558481_PopulateMovies.Designer.cs">
+      <DependentUpon>201807151558481_PopulateMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807151606256_AddedBirthdayToCustomerClass.cs" />
+    <Compile Include="Migrations\201807151606256_AddedBirthdayToCustomerClass.Designer.cs">
+      <DependentUpon>201807151606256_AddedBirthdayToCustomerClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\IdAttribute.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -238,12 +289,19 @@
     <Compile Include="ViewModels\Authentication\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Authentication\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\Authentication\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\Vidly\CounterViewModel.cs" />
+    <Compile Include="ViewModels\Vidly\CustomerViewModel.cs" />
+    <Compile Include="ViewModels\Vidly\MembershipTypes.cs" />
+    <Compile Include="ViewModels\Vidly\MovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-cerulean.min.css" />
+    <Content Include="Content\bootstrap-lumen.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\blockbuster.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -298,10 +356,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ViewModels\Vidly\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -325,6 +384,42 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807081311361_AddedMovieClass.resx">
       <DependentUpon>201807081311361_AddedMovieClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807150928348_SeedAdmin.resx">
+      <DependentUpon>201807150928348_SeedAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807150932574_SeedUsers.resx">
+      <DependentUpon>201807150932574_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807150940531_SeedUserRoles.resx">
+      <DependentUpon>201807150940531_SeedUserRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807151316047_AddedMembershipTypeToCustomerClass.resx">
+      <DependentUpon>201807151316047_AddedMembershipTypeToCustomerClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807151317077_SeedMembershipTypes.resx">
+      <DependentUpon>201807151317077_SeedMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807151320146_AddedDataannotationToCustomerClass.resx">
+      <DependentUpon>201807151320146_AddedDataannotationToCustomerClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807151327359_AddedNameToMembershipTypeClass.resx">
+      <DependentUpon>201807151327359_AddedNameToMembershipTypeClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807151330189_ClearMembershipTypes.resx">
+      <DependentUpon>201807151330189_ClearMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807151549413_AddedGenreToMovieClass.resx">
+      <DependentUpon>201807151549413_AddedGenreToMovieClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807151551465_PopulateGenre.resx">
+      <DependentUpon>201807151551465_PopulateGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807151558481_PopulateMovies.resx">
+      <DependentUpon>201807151558481_PopulateMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807151606256_AddedBirthdayToCustomerClass.resx">
+      <DependentUpon>201807151606256_AddedBirthdayToCustomerClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace Mosh.Vidly
 {
@@ -23,7 +22,8 @@ namespace Mosh.Vidly
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      //"~/Content/bootstrap.css",
+                      "~/Content/bootstrap-cerulean.min.css",
                       "~/Content/site.css"));
         }
     }
