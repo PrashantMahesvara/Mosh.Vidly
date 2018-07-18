@@ -14,6 +14,8 @@ namespace Mosh.Vidly.Models
         public bool IsSubscribedToNewsletter { get; set; }
         public MembershipType MembershipType { get; set; }
         public byte MembershipTypeId { get; set; }
+
+        [Min18YearsIfMember]
         public DateTime? Birthday { get; set; }
     }
 }
