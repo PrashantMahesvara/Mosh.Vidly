@@ -2,6 +2,7 @@
 using Mosh.Vidly.Dtos;
 using Mosh.Vidly.Models;
 using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -20,7 +21,7 @@ namespace Mosh.Vidly.Controllers.Api
 
         public IEnumerable<Customer> GetCustomers()
         {
-            return _db.Customers.ToList();
+            return _db.Customers.Include(c => c.MembershipType).ToList();
         }
 
         public Customer GetCustomer(int id)

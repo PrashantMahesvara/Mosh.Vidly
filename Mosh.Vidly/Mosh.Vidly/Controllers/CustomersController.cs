@@ -20,9 +20,7 @@ namespace Mosh.Vidly.Controllers
         [HttpGet]
         public ViewResult Index()
         {
-            var listOfCustomers = _db.Customers.Include(m => m.MembershipType).ToList();
-
-            return View(listOfCustomers);
+            return View();
         }
 
         [HttpGet]

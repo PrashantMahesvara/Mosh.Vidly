@@ -7,15 +7,15 @@
 <h2>List of our movies</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            Title
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Genre.Name)
+            Genre
         </th>
         <th>
             Actions
@@ -31,9 +31,9 @@
             @Html.DisplayFor(modelItem => item.Genre.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Details", "Details", new { id=item.Id }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id }, new { @class = "btn btn-primary" })
         </td>
     </tr>
 }
